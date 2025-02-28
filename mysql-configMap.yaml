@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: db-config
+data:
+  host: mysql
+  dbName: spring_dockerIn_k8s
+  dbUser: Steve
+  dbPassword: Steve@123

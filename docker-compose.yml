@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: Steve@123
+      MYSQL_DATABASE: spring_dockerIn_k8s
+      MYSQL_USER: root
+      MYSQL_PASSWORD: Steve@123
+    ports:
+      - "3309:3306"
+    networks:
+      - otisowino-network
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+  springboot-app:
+    image: spring-docker-k8s:latest
+    build: .
+    depends_on:
+      - mysql  # Spring Boot waits for MySQL to be ready
+    ports:
+      - "5000:5000"
+    networks:
+      - otisowino-network
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/spring_dockerIn_k8s?createDatabaseIfNotExist=true
+      SPRING_DATASOURCE_USERNAME: Steve  # Use the root user to match the MySQL service
+      SPRING_DATASOURCE_PASSWORD: Steve@123  # Password to connect to MySQL
+
+networks:
+  otisowino-network:  # Ensure the network name matches
+    driver: bridge
+
+volumes:
+  mysql-data:
+

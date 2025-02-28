@@ -1,0 +1,20 @@
+* minikube v1.35.0 on Linuxmint 21.3
+* Using the qemu2 driver based on existing profile
+* Starting "minikube" primary control-plane node in "minikube" cluster
+* Restarting existing qemu2 VM for "minikube" ...
+* Preparing Kubernetes v1.32.0 on Docker 27.4.0 ...
+X Problems detected in kube-controller-manager [3a9fb28ba4d9]:
+  E0226 11:29:07.821711       1 reflector.go:166] "Unhandled Error" err="k8s.io/client-go/informers/factory.go:160: Failed to watch *v1.Lease: leases.coordination.k8s.io is forbidden: User \"system:kube-controller-manager\" cannot watch resource \"leases\" in API group \"coordination.k8s.io\" at the cluster scope" logger="UnhandledError"
+X Problems detected in kube-controller-manager [3a9fb28ba4d9]:
+  E0226 11:29:07.821711       1 reflector.go:166] "Unhandled Error" err="k8s.io/client-go/informers/factory.go:160: Failed to watch *v1.Lease: leases.coordination.k8s.io is forbidden: User \"system:kube-controller-manager\" cannot watch resource \"leases\" in API group \"coordination.k8s.io\" at the cluster scope" logger="UnhandledError"
+X Problems detected in kube-controller-manager [3a9fb28ba4d9]:
+  E0226 11:29:07.821711       1 reflector.go:166] "Unhandled Error" err="k8s.io/client-go/informers/factory.go:160: Failed to watch *v1.Lease: leases.coordination.k8s.io is forbidden: User \"system:kube-controller-manager\" cannot watch resource \"leases\" in API group \"coordination.k8s.io\" at the cluster scope" logger="UnhandledError"
+* Configuring bridge CNI (Container Networking Interface) ...
+* Verifying Kubernetes components...
+  - Using image gcr.io/k8s-minikube/storage-provisioner:v5
+  - Using image registry.k8s.io/ingress-nginx/kube-webhook-certgen:v1.4.4
+  - Using image registry.k8s.io/ingress-nginx/kube-webhook-certgen:v1.4.4
+  - Using image registry.k8s.io/ingress-nginx/controller:v1.11.3
+* Verifying ingress addon...
+* Enabled addons: storage-provisioner, ingress, default-storageclass
+* Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default
